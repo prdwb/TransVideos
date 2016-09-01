@@ -1,5 +1,6 @@
 from pytube import YouTube
 import MySQLdb
+import time
 
 import sys
 
@@ -57,4 +58,4 @@ if __name__ == '__main__':
         if downloader.getUrl() > 0:
             downloader.startProcess()
         else:
-            time.sleep(60)
+            time.sleep(3600)

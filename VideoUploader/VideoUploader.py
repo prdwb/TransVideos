@@ -1,5 +1,6 @@
 from youku import YoukuUpload
 import MySQLdb
+import time
 
 import sys
 import os
@@ -65,8 +66,12 @@ class VideoUploader():
 			self.getVideoInfo(id)
 			print self.info['title']
 			# print self.info['description']
-			self.upload(id)
-			self.setUploadFinished(id)
+			try:
+				self.upload(id)
+				self.setUploadFinished(id)
+			except e:
+				print "Error %d: %s" % (e.args[0], e.args[1])
+
 
 if __name__ == "__main__":
 	uploader = VideoUploader()
@@ -74,4 +79,5 @@ if __name__ == "__main__":
 		if uploader.getId() > 0:
 			uploader.startProcess()
 		else:
-			time.sleep(60)
+			print 'sleeping'
+			time.sleep(3600)
