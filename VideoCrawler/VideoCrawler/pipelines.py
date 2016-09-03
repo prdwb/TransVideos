@@ -6,7 +6,7 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 import MySQLdb
-
+import os
 import sys
 
 reload(sys)
@@ -35,3 +35,6 @@ class VideocrawlerPipeline(object):
         except MySQLdb.Error, e:
           print "Error %d: %s" % (e.args[0], e.args[1])
         return item
+
+    def close_spider(self, spider):
+        os.system('/root/VideoDownloader/VideoDownloader.sh')

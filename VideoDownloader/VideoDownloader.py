@@ -1,6 +1,6 @@
 from pytube import YouTube
 import MySQLdb
-import time
+import os
 
 import sys
 
@@ -49,13 +49,11 @@ class VideoDownloader():
         # self.getUrl()
         try:
             self.getVideo()
-        except e:
+        except Exception, e:
             print "Error %d: %s" % (e.args[0], e.args[1])
 
 if __name__ == '__main__':
     downloader = VideoDownloader()
-    while True:
-        if downloader.getUrl() > 0:
-            downloader.startProcess()
-        else:
-            time.sleep(3600)
+    if downloader.getUrl() > 0:
+        downloader.startProcess()
+        os.system('../VideoUploader/VideoUploader.sh')

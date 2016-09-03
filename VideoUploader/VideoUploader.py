@@ -69,15 +69,11 @@ class VideoUploader():
 			try:
 				self.upload(id)
 				self.setUploadFinished(id)
-			except e:
+			except Exception, e:
 				print "Error %d: %s" % (e.args[0], e.args[1])
 
 
 if __name__ == "__main__":
 	uploader = VideoUploader()
-	while True:
-		if uploader.getId() > 0:
-			uploader.startProcess()
-		else:
-			print 'sleeping'
-			time.sleep(3600)
+	if uploader.getId() > 0:
+		uploader.startProcess()
