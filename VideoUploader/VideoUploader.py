@@ -1,7 +1,7 @@
 from youku import YoukuUpload
 import MySQLdb
 import time
-
+import logging
 import sys
 import os
 
@@ -70,10 +70,17 @@ class VideoUploader():
 				self.upload(id)
 				self.setUploadFinished(id)
 			except Exception, e:
-				print "Error %d: %s" % (e.args[0], e.args[1])
+				print e
+				logging.error(str(e))
 
 
 if __name__ == "__main__":
+	logging.basicConfig(level=logging.ERROR,
+                format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                datefmt='%a, %d %b %Y %H:%M:%S',
+                filename='Error_VideoUploader.log',
+                filemode='a')
+
 	uploader = VideoUploader()
 	if uploader.getId() > 0:
 		uploader.startProcess()

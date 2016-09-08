@@ -1,7 +1,7 @@
 from pytube import YouTube
 import MySQLdb
 import os
-
+import logging
 import sys
 
 reload(sys)
@@ -50,10 +50,17 @@ class VideoDownloader():
         try:
             self.getVideo()
         except Exception, e:
-            print "Error %d: %s" % (e.args[0], e.args[1])
+            print e
+            logging.error(str(e))
 
 if __name__ == '__main__':
+    logging.basicConfig(level=logging.ERROR,
+                format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                datefmt='%a, %d %b %Y %H:%M:%S',
+                filename='Error_VideoDownloader.log',
+                filemode='a')
+
     downloader = VideoDownloader()
     if downloader.getUrl() > 0:
         downloader.startProcess()
-        os.system('../VideoUploader/VideoUploader.sh')
+       # os.system('../VideoUploader/VideoUploader.sh')

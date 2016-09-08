@@ -36,5 +36,5 @@ class VideocrawlerPipeline(object):
           print "Error %d: %s" % (e.args[0], e.args[1])
         return item
 
-    def close_spider(self, spider):
-        os.system('/root/VideoDownloader/VideoDownloader.sh')
+#    def close_spider(self, spider):
+#        os.system('/root/VideoDownloader/VideoDownloader.sh')
