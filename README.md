@@ -5,8 +5,8 @@ The crawler framework is Scrapy.
 
 # 运行指南
 ## 环境准备
-* Python MySQL
-* 安装 PyTube, youku, 
+* Python, MySQL
+* 安装 PyTube, youku, MySQLdb
 * 按videos.sql 建表
 * 在代码同级目录下建立Videos/目录
 * 在代码相应位置配置数据库信息和优酷频道API KEY
