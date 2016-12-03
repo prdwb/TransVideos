@@ -15,8 +15,8 @@ sys.setdefaultencoding('utf-8')
 class VideocrawlerPipeline(object):
 
     def __init__(self):
-        self.conn = MySQLdb.connect(user='root', passwd='rootPwd!3',\
-        db='videodb', host='localhost', charset='utf8', use_unicode=True)
+        self.conn = MySQLdb.connect(user='USERNAME', passwd='PASSWD',\
+        db='DBNAME', host='HOST', charset='utf8', use_unicode=True)
         self.cursor = self.conn.cursor()
 
     def process_item(self, item, spider):
