@@ -10,10 +10,7 @@ class VideoCrawler(scrapy.Spider):
     name = 'VideoCrawler'
     allowed_domains = ['youtube.com']
     start_urls = [
-        'https://www.youtube.com/user/djbendine/videos',
-        'https://www.youtube.com/channel/UCVYamHliCI9rw1tHR1xbkfw/videos',
-        'https://www.youtube.com/user/LauraVitalesKitchen/videos',
-        'https://www.youtube.com/channel/UCJFp8uSYCjXOMnkUyb3CQ3Q/videos'
+        'https://www.youtube.com/user/djbendine/videos'
     ]
 
     def parse(self, response):
