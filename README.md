@@ -1,7 +1,7 @@
 # TransVideos
-We cannot access YouTube in China due to severe cencorship, so I designed this program to automatically download videos from specific channels on YouTube and upload them to Youku, a video website in China. **All downloaded videos are authorized.**
+We cannot access YouTube in China, so I designed this program to automatically download videos from specific channels on YouTube and upload them to Youku, a video website in China. **All downloaded videos are authorized.**  
 
-**重要信息：在上传视频之前，请确保已经得到原作者授权！**
+**重要信息：在上传视频之前，请确保已经得到原作者授权！**  
 **Important: Please make sure to obtain the authors' authrozation before uploading their videos to somewhere else!**
 
 The crawler framework is Scrapy.
